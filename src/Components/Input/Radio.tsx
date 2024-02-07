@@ -86,11 +86,12 @@ export function Radio<T extends string | number>(
                 value={value?.toString() ?? ''}
             >
                 <Stack direction={direction}>
-                    {stringOptions.map((option) => (
+                    {stringOptions.map((option, index) => (
                         <ChakraRadio
                             isInvalid={!!invalidText || isInvalid}
                             value={option.value}
                             id={`${label}-radio-${option.value}`}
+                            key={`${label}-radio-${option.value}`}
                             isDisabled={option.isDisabled}
                         >
                             {option.label}
