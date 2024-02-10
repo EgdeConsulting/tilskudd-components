@@ -66,11 +66,12 @@ export function Checkbox<T extends string | number>(
         <BaseInput {...props} isGroup>
             <CheckboxGroup>
                 <Stack direction={direction}>
-                    {options.map((option, index) => (
+                    {options.map((option) => (
                         <ChakraCheckbox
                             isInvalid={!!invalidText || isInvalid}
                             isDisabled={isDisabled || option.isDisabled}
-                            key={`chk${index}`}
+                            id={`${option.label}-check-${option.value}`}
+                            key={`${option.label}-check-${option.value}`}
                             onChange={() => handleOnChange(option.value)}
                             isChecked={value.includes(option.value)}
                             autoFocus={autoFocus}
