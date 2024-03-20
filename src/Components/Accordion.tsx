@@ -134,35 +134,33 @@ export function Accordion(props: AccordionProps): ReactElement {
                     <AccordionItem key={`aci${index}`}>
                         {({ isExpanded }) => (
                             <>
-                                <h2>
-                                    <AccordionButton sx={buttonStyles}>
-                                        <Box flex='1' textAlign='left'>
-                                            {typeof accordionItem.title ===
-                                            'string' ? (
-                                                <Heading
-                                                    size='md'
-                                                    color='blue'
-                                                    sx={titleStyles}
-                                                >
-                                                    {accordionItem.title}
-                                                </Heading>
-                                            ) : (
-                                                accordionItem.title
-                                            )}
-                                        </Box>
-                                        {isExpanded ? (
-                                            <ArrowUpIcon
-                                                fontSize='24px'
+                                <AccordionButton sx={buttonStyles}>
+                                    <Box flex='1' textAlign='left'>
+                                        {typeof accordionItem.title ===
+                                        'string' ? (
+                                            <Heading
+                                                size='md'
                                                 color='blue'
-                                            />
+                                                sx={titleStyles}
+                                            >
+                                                {accordionItem.title}
+                                            </Heading>
                                         ) : (
-                                            <ArrowDownIcon
-                                                fontSize='24px'
-                                                color='blue'
-                                            />
+                                            accordionItem.title
                                         )}
-                                    </AccordionButton>
-                                </h2>
+                                    </Box>
+                                    {isExpanded ? (
+                                        <ArrowUpIcon
+                                            fontSize='24px'
+                                            color='blue'
+                                        />
+                                    ) : (
+                                        <ArrowDownIcon
+                                            fontSize='24px'
+                                            color='blue'
+                                        />
+                                    )}
+                                </AccordionButton>
                                 <AccordionPanel sx={panelStyles}>
                                     {accordionItem.content}
                                 </AccordionPanel>
