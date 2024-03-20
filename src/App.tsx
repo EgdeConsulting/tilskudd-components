@@ -1,4 +1,4 @@
-import { ChakraProvider, Heading, Text } from '@chakra-ui/react';
+import { Box, Center, ChakraProvider, Heading, Text } from '@chakra-ui/react';
 import {
     Alert,
     Accordion,
@@ -33,7 +33,21 @@ function Divider(props: { title: string }) {
 
 function App() {
     const accordionItems = [
-        { title: 'Accordion One', content: <div>Accordion One Content</div> },
+        {
+            title: 'Accordion One',
+            content: (
+                <Box>
+                    <Heading>Accordion One Content</Heading>
+                    <Center>
+                        <Text>Here is some centered text</Text>
+                        <Box width='500px' height='500px'>
+                            <Heading>Heading in a large box</Heading>
+                            <Text>Some more text</Text>
+                        </Box>
+                    </Center>
+                </Box>
+            ),
+        },
         { title: 'Accordion Two', content: <div>Accordion Two Content</div> },
     ];
 
